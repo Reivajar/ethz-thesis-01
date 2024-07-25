@@ -1,0 +1,519 @@
+% \documentclass[fleqn,10pt]{wlscirep}
+% \usepackage[utf8]{inputenc}
+% \usepackage[T1]{fontenc}
+% \usepackage{multirow}
+% \usepackage{booktabs}
+% \usepackage{tabularray}
+% \usepackage{rotating}
+% \usepackage{multicol}
+% \usepackage{cleveref}
+% \usepackage{hyperref}
+
+% % Updated definition, see explanation below
+% \newcommand*{\fullref}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}} % One single link
+
+% %\usepackage{natbib}
+
+% \title{A virtual reality experiment to study pedestrian perception of future street scenarios}
+
+% \author[1,*]{Javier Argota Sánchez-Vaquerizo}
+% \author[1,2]{Carina I. Hausladen}
+% \author[1]{Sachit Mahajan}
+% \author[1]{Marc Matter}
+% \author[1]{Michael Siebenmann}
+% \author[3]{Michael A. B. van Eggermond}
+% \author[1,4]{Dirk Helbing}
+% \affil[1]{ETH Zürich, Computational Social Science, Zürich, 8092, Switzerland}
+% \affil[2]{California Institute of Technology, Behavioral Economics, Pasadena, CA 91125, United States}
+% \affil[3]{University of Applied Sciences Northwestern Switzerland (FHNW), Muttenz, 4132, Switzerland}
+% \affil[4]{Complexity Science Hub, Vienna, 1080, Austria}
+
+% \affil[*]{javier.argota@gess.ethz.ch}
+
+% %\affil[+]{these authors contributed equally to this work}
+
+% %\keywords{virtual reality, street scenario, traffic, pedestrian, urban design}
+
+\chapter{A virtual reality experiment to study pedestrian perception of future street scenarios\textsuperscript{*}}
+\chaptermark{A VR experiment of future street scenarios}
+\label{ch:VR}
+\graphicspath{{chapters/01_VR/figures/}}
+
+\section*{Prologue: The City of Unbounded Streets}
+\addcontentsline{toc}{section}{Prologue: The City of Unbounded Streets}
+\footnotetext{* A version of this chapter has been published as a peer-reviewed article: \fullcite{ArgotaSanchez-Vaquerizo2024}. The prologue has been published as part of the book chapter: \fullcite{ArgotaSanchez-Vaquerizo2023_3Tales}.}
+
+It is 8 am. In this city, the streets leading to transit stations, offices, and schools show a calm, packed, and incessant stream of vehicles of different shapes and sizes for those who are not working remotely today. They do not necessarily move fast \citep{Gershenson2015}, but in an intertwined, satisfactory, and coordinated fashion, avoiding stop-and-go waves and making the most of the space available on streets. They leave just enough room for opposing traffic and pedestrians heading somewhere else while seamlessly merging with them when needed as flocks \citep{Jiang2006}. 
+
+At 10 am, as the morning hustle and bustle comes to an end, street life diversifies. Fewer vehicles are around, and they move differently and more unpredictably: some of them stop here and there to pick people up or to drop goods off. Small delivery vehicles squeeze between larger cars and people \citep{9151337} to accomplish their last-mile service. A group of school students crosses the street and the traffic rapidly adapts, slows down, avoids them, and keeps running.
+
+At 5 pm, kids play on the street after school while people enjoy some after-work gatherings in front of bars and restaurants. The vehicles of those who need to return home or go somewhere else sense the environment: they detect where the people are, anticipate their movements, and know how humans react in their presence to avoid both scaring them and hampering traffic flow  \citep{Ackermann2019, Millard-Ball2018}.
+
+At 6 pm, there is enough space on the street for people to sit outside, grab some drinks, and meet family,friends, and strangers, for kids with their parents to take a walk, and for the evening traffic of people doing the last chores before dinner \citep{Ruiz-Apilanez2017}.
+
+After midnight, the streets, mostly empty, show their real backbone. There is no signage, marking on the surface, or obvious sidewalks, just a flat, step-free \citep{Meyboom2018} surface and some greenery, where traffic directions, lanes, and rights-of-way can be created, removed, adapted, and reversed on demand \citep{Papageorgiou2021, Rieland2018}. The streetscape becomes a whiteboard that adapts dynamically to diverse occupation patterns and uses at different moments of the day. There are no more fixed segregations between different uses and speeds throughout the day, and no more roadways oversized inefficiently only for peak times or for parking spaces (Norton, 2008). It results simply in a new social contract on the use of the public domain with different sensorial, behavioural, and semantic rules \citep{Fernandez-Abascal2019}.
+
+This city, its streets and its ‘inhabitants’ have been simulated endless times before. Its artificial city dwellers can anticipate what humans are going to do. They leave room for people and find the best way of adapting their behaviour while leveraging efficient movement with perceived and measured safety. These prosthetic urban inhabitants have learned from simulations in virtual worlds how to be simultaneously efficient in their tasks of transport, assistance, and maintenance and to be social machines able to interact safely and usefully with humans \citep{Bauer2009}. In fact, humans in this city have simulated the interactions of heterogeneous groups of artificial and natural city dwellers using virtual environment as safe sandboxes \citep{Fujii2017}. These immersive simulations have captured the cognitive and emotional responses of people facing thousands of different situations \citep{Dubey2016deep, Liu2017urban}. It means that they have simulated, anticipated, and tested virtual worlds before implementing them for real. Even further, they have led people to change how they behave for more coordinated and efficient use of common resources \citep{Theodorou2019}. Each time an artificial city dweller, whether a full-size car, a bus, a small delivery vehicle, or a droid-like personal assistant, goes along a street, it senses its physical environment. Then, the artificial city dweller projects its physical environment into a full digital twin that simulates possible scenarios to anticipate the appropriate and safe behaviour that, ultimately, will apply in reality. And it repeats this procedure again and again, hundreds and thousands of times \citep{blackmirror_hang_the_dj}. 
+
+\setcounter{figure}{-1}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=1\textwidth]{fig_02_the_streetscape_is_a_tabula_rasa copy.jpg}
+    \captionsetup{format=plain, justification=centering} % Center the caption
+    \caption{The streetscape is a tabula rasa (blank canvas) whose digital layer enables simultaneous uses and interactions learned from digital mirrors of the environment.}
+   \label{fig:street_tabula_rasa}
+\end{figure}
+\FloatBarrier
+
+
+
+% \begin{chapterabstract}
+% \begin{abstract}
+\section*{}
+\chapterabstract{
+The current allocation of street space is based on expected vehicular peak-hour flows. Flexible and adaptive use of this space can respond to changing needs. To evaluate the acceptability of flexible street layouts, several urban environments were designed and implemented in virtual reality. Participants explored these designs in immersive virtual reality in a 2x3 mixed factorial experiment, in which we analysed self-reported, behavioural and physiological responses from participants. Distinct communication strategies were varied between subjects.
+Participants' responses reveal a preference for familiar solutions. Unconventional street layouts are less preferred, perceived as unsafe and cause a measurably greater stress response. 
+Furthermore, information provision focusing on comparisons lead participants to focus primarily on the drawbacks, instead of the advantages of novel scenarios. 
+When being able to freely express thoughts and opinions, participants are focused more on the impact of space design on behaviour rather than the objective physical features themselves.
+Especially, this last finding suggests that it is vital to develop new street scenarios in an inclusive and democratic way: the success of innovating urban spaces depends on how well the vast diversity of citizens' needs is considered and met.}
+% \end{chapterabstract}
+% \end{abstract}
+% \begin{document}
+
+% \flushbottom
+% \maketitle
+
+% \thispagestyle{empty}
+
+\section{Introduction}
+Rapid urbanization has resulted in the majority of the world's population living in cities. At the same time, car-centred planning has resulted in the fact that up to one-third of the urban area is allocated to infrastructures for motor vehicles, including roads and parking lots \cite{Angel2016}. With increasing population and employment densities within a limited area, cities face numerous challenges, ranging from air and noise pollution over congestion to affordable housing prices and suitable allocation of space \cite{vanDoornHotProperty2019}.
+
+The trend to provide more of this space to sustainable modes of transport and active mobility has recently resulted in tensions around the allocation and use of road space \cite{ITF2022}. At the same time, the growth of cities comes with a growing desire for public space. Increasingly, streets are not only viewed as thoroughfares but as places. An allocation of roads to motorized vehicle transport only conflicts with this desire \cite{vonSchoenfeldCities2017}. However, there may be new solutions. The current allocation of space to motorized transport is based on expected peak-hour flows, while the demand for different modes of transport and other uses largely varies with the time-of-day and day-of-week \cite{ITF2022}. Therefore, underutilized spaces could be used for other purposes \cite{ValencaJUrbMob_2021}. For example, urban planning concepts such as shared spaces or shared streets integrate vehicular traffic into social spaces by removing typical design elements such as traffic signs and speed humps \cite{HamiltonBaillieEnv2008}. As we will see, novel technologies enable even better solutions.
+
+% GOAL I: testing new street scenarios
+Recently, within the framework of responsive, or adaptable, infrastructures, one explores flexible usage patterns of roads. With the emergence of digitally upgraded infrastructures and autonomous vehicles, new street layouts and scenarios become possible in the near future, which may repurpose spaces currently reserved for cars\cite{Schlossberg2018}. These include dynamic reversible lanes\cite{Perez-Mendez2021}, laneless roads\cite{Papageorgiou2021}, dynamic signalling of right-of-way\cite{Ratti2018, Larrard2013}, flex zones and smart curb management\cite{Nacto2020} as well as other forms of managed lanes \cite{Schonhofer2022} or curbless flat streets \cite{Meyboom2018}, together with different approaches to increase pedestrain safety on streets \cite{Guo2023}. Our study tests three different street scenarios illustrated in Figures \ref{fig:scenarios} and \ref{fig:scenarios-plans}: \emph{status-quo}, \emph{inLED}, and \emph{curbless}. These distinct implementations (see \autoref{tab:scenarios-features-motivations}) allow one to investigate new street designs that enable adaptive usage paradigms for urban spaces, envisioning a future where there is no static distinction between roadways, sidewalks, and parking lots \cite{Kondor2020}, but where streets can be used dynamically and flexibly \cite{Rieland2018}.
+We would like to emphasize that, here, the term "street" pertains to the entire space located between two buildings and not just limited to the roadways.
+
+% GOAL II: Understanding perception
+So far, there is limited knowledge on how flexible streetscapes should and will be designed, operated, and accepted by people \cite{Ruiz-Apilanez2017}. Among others, it will be essential to study movement patterns of pedestrians in relation to new environments \cite{Zacharias2001pedestrian}. An understanding of how street design in urban settings affects the behaviour of people can inform the creation of safe urban environments and can support the decision-making of stakeholders when new mobility paradigms arise, including policy-makers, experts, and citizens.
+
+% GOAL III: Focus on communication
+Classical segregated lanes may maximize speeds for motorized vehicles but do not necessarily enhance the overall multi-modal level-of-service. Future streets and vehicle technologies have the potential to overcome this segregation and promote a higher diversity of uses on streets depending on changing needs \cite{Duarte2018, Ruiz-Apilanez2017}. However, a radical shift in street design may not be accepted by drivers, as they are used to being prioritized. Changes in the allocation of space (e.g. reduction of lanes or parking lots, traffic calming, pedestrianization, expansion of transit and bike lanes) or in pricing schemes (e.g. parking fees, mobility pricing) often face resistance \cite{GoesslingJUrbanDesign2020}. Therefore, determining the acceptability of measures to be taken and their suitable communication is crucial for successful changes in street design or operation. 
+
+For this, it is important to consider the perspectives of all road users and provide them with incentives to embrace the changes in street design and operation, such as a reduction in speed in favour of interoperability and reduced accident severity. 
+\emph{Our study proposes that intrinsic motivation to cooperate can be enhanced by perceived improvements in the quality of mobility.} 
+Implementing changes in traffic flows that promote a slower yet more continuous traffic flow may help to improve the acceptability of speed limits for car drivers. Moreover, such changes may enhance the safety of all road users and create a more equitable and sustainable transportation system based on shared and flexible use of street spaces. Consequently, it may adapt more effectively to changing demands, easing traffic only when needed and promoting space for mobility modes different from private motorized vehicles, thereby reducing undesirable pollution.
+By prioritizing the needs of all road users and emphasizing the importance of accessibility, comfort, and safety, one may enhance the overall livability of urban areas and foster a more inclusive and sustainable city community.
+
+% Focus on pedestrians
+Current engineering efforts to improve autonomous driving focus, for example, on enhancing sensing capabilities, intervehicle and car-to-infrastructure communication, vehicle safety, and trust in navigation \cite{Rosique2019, Gold2015, Jayaraman2019}. However, the impact of disruptive mobility paradigms on urbanism and traffic, such as adaptive patterns of street usage, is not yet well enough understood. To assess this impact, it is necessary to gather feedback from human subjects, particularly from vulnerable road users. In this paper, we put a particular focus on pedestrians in urban areas, given their high fatality and injury rates \cite{EuropeanCommission2021, HighwayTrafficSafetyAdministration2023}. Traffic planners will need to better understand how \emph{pedestrians} perceive novel usage technologies and paradigms: are they seen as a safety threat, causing psychological distress, or do they promote a more variable and diverse use of urban spaces? Therefore, we aim to provide new insights that may eventually inform future urban planning and design decisions and ensure that the needs and perspectives of various road users are taken into account.
+
+% Why VR
+For this, we use virtual reality (VR), a research tool that has been previously used to assess crossing behaviour \cite{SobhaniTransResF2019}, study interaction between pedestrians and autonomous vehicles \cite{Nazemi2021}, communicate future urban designs \cite{DrettakisPresence2007} and assess the willingness-to-cycle \cite{Nazemi2021}. The advantages are, among others, that it is possible to replicate natural pedestrian behaviour in virtual environments inspired by real-world settings \cite{Angulo2023}. This allows one to communicate future designs and technology in a realistic, immersive and safe fashion, with relatively low costs and high ecological validity \cite{Oselinsky2023}. In fact, a comparison of virtual with real environments reveals that individuals make similar decisions when studying crossing behaviour \cite{Bhagavathula2008} and pedestrian behaviour matches real-life norms \cite{DebAppliedErgonomics2017}. That is, VR can help imagine future technologies and their impact better than text-based surveys \cite{FarooqEtAlTRR_2018}. In particular, vulnerable users such as pedestrians and cyclists are cognitively and psychologically influenced by VR environments, similarly to the corresponding real-world environments \cite{Guo2022}.
+
+% Goals
+Our experiment has three primary goals. 
+First, we aim to test new street scenarios that address the challenges discussed above and promote a more sustainable approach to urban infrastructure design, reducing the negative impact of transportation centred on private vehicles and diversifying and flexibilizing human uses on streets. 
+Second, we aim to investigate how these scenarios are perceived by the public, including their perceived safety, and how they impact travel patterns. 
+Third, we aim to evaluate the foundational elements of communication campaigns that introduce new street scenarios to the public. Specifically, we focus on assessing the effectiveness of video presentations, comparing their impact when delivered in \emph{sequential} as compared to \emph{parallel} formats.
+Our focus is on examining the perceived safety of various street designs and understanding the psychological responses to these settings, as they significantly influence mobility patterns. By doing so, we aim to facilitate a shift in the prevailing mobility culture, which currently gravitates around motorized vehicles, towards a more eco-friendly and sustainable approach to street usage. Through our research, we hope to provide insights that can inform future urban planning and design decisions and promote the adoption of more inclusive and sustainable transportation policies.
+
+
+% Brief description of the experiment
+To achieve our goals, we designed and conducted a VR experiment, which focused on the pedestrian perspective (\autoref{fig:flowchart}). Specifically, we tested three different street design scenarios that emphasize the concept of shared space and incorporate emerging technologies such as smart pavements and autonomous vehicles, which will become usable in the near future. This was our first goal. 
+
+In our VR experiments, participants were asked to cross a virtual street in three different virtual environments (within-subjects factor), each representing a different street design scenario (either \emph{status-quo}, \emph{inLED}, or \emph{curbless}). The order of these scenarios was randomized across participants. Through this, we aimed to quantify user perception and understand the impact of these scenarios on safety and travel patterns. To achieve this, we collected three types of data: self-reported preferences, behavioural data and physiological responses, including heart rate as well as head and body movement patterns. This was our second goal. 
+
+Furthermore, to investigate how these changes should be best communicated to the public, we performed a between-subjects treatment. Assigned randomly to each information treatment group, half of the participants watched the new traffic scenarios \emph{sequentially} in an isolated way, while the other half watched the new street paradigms in \emph{parallel} on a split screen. We hypothesized that the split-screen approach supports comparison and helps to recognize the advantages and disadvantages of each scenario better than watching videos sequentially. Ultimately, the insights we gained from this study hope to eventually support the design and implementation of future transportation policies that are more inclusive and sustainable. This was our third goal. 
+
+
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=1\textwidth]{experiment_flow_diagram_v3.jpg}
+    \caption{Design, phases, devices and data collection during the experimental setting.}
+   \label{fig:flowchart}
+\end{figure}
+
+
+\section{Results}
+Our experimental study involved 43 participants with a mean age of 24.76 ($\pm3.73$) years, comprising 62.8\% (n=27) female individuals. The majority of participants were students.
+
+\paragraph{Number of crossing attempts.}
+
+\input{chapters/01_VR/tables/tab_summary_participants_sessions}
+
+Participants were briefed to cross the road safely (i.e. without being hit by a car). Each participant experienced two different configurations (morning rush hour and evening), as illustrated in \autoref{fig:scenarios}, in three scenarios (\emph{status-quo}, \emph{inLED}, and \emph{curbless}), as shown in \autoref{fig:scenarios-plans} (for more details see \autoref{tab:scenarios-features-motivations}). 
+\autoref{tab:summary_participants_sessions} displays the number of participants by scenario (columns) and treatment (rows). 
+Each participant was given two attempts per configuration in each scenario to cross the road (\textbf{d} in \autoref{fig:flowchart}). Depending on the number of failed attempts, this resulted in a somewhat different total number of sessions per scenario and per treatment. 
+Overall, with only $4.5\%$ there was a low rate of failed attempts, but there was a significant impact of the scenario type on the failure rate (n=266, $p_{two-sided\ Fisher}=1.1e-04$)). Most of the failures occurred in scenario \emph{inLED}. 
+Apart from this, there were no significant differences in failure rates observed across treatments (\textit{sequential} or \textit{parallel}), indicating that this intervention had no significant impact on performing the task (n=266, $p_{two-sided\ Fisher}=1.0$). 
+
+\paragraph{Stress, safety, willingness to cross, and attractiveness.} 
+\begin{figure}[hbt!]
+\centering
+\includegraphics[width=\linewidth]{violin_plots_significant_structured_responses_v10.jpg}
+\caption{Self-reported responses in the structured survey. Each panel presents a different response to the structured survey, which shows statistically significant differences ($p<0.05$) between \emph{information treatments}, \emph{scenarios}, and their interaction (Information treatment $\times$ Scenario). Confidence intervals for the estimates are shown between brackets.  
+Panel \textbf{a} displays the distributions for the self-reported "active" feeling on the Short Stress State (SSS) questionnaire.
+Panels \textbf{b}-\textbf{f} show responses with statistically significant differences for \emph{scenarios} and interactions between interventions. When shown, scenarios are grouped on the $X$-axis, featuring the aggregated distribution as a coloured box plot in blue, magenta, or bright orange. Violin plots show distributions for each information treatment within the same scenario: mint for \emph{sequential} and light orange for \emph{parallel}. They are complemented by corresponding box plots displaying median values and interquartile ranges. For further details on the statistical methods see \nameref{sec:stat_details}.
+}
+\label{fig:violin_sign_structured_survey}
+\end{figure}
+
+Directly after completing the crossing for each scenario, participants responded to a brief structured survey. This survey includes a Short Stress State (SSS) \cite{helton2004validation} questionnaire, and questions regarding safety, willingness to cross, and the perception of the attractiveness of a scenario (see \hyperref[apx:quest]{Questionnaires}).
+To address repeated measures of non-parametric variables, we employed an Aligned Rank Transform (ART) ANOVA test \cite{Wobbrock2011} (see \hyperref[sec:MaterialsAndMethods]{Materials and Methods} for more details). 
+Our analysis was structured across three levels: design scenario (Level 1), information treatment $\times$ scenario (Level 2), and information treatment (Level 3).
+
+%SCENARIO (lv. 1)
+According to our experiments, scenarios (Level 1) elicit significant variations in responses. Participants' reactions to the scenarios show the ranking \emph{status-quo}>\emph{inLED}>\emph{curbless} (where "a>b" means that a is more attractive than b). This suggests that participants are less willing to cross unconventional street layouts, which are perceived as less attractive and less safe. This trend is visually apparent through the negative slopes of the lines in panels \textbf{b}, \textbf{c}, \textbf{d}, and \textbf{e}.
+In panels \textbf{e} and \textbf{f}, which analyze the differences in the perceived safety for pedestrians and cars (actually, car drivers), differences are observed. 
+Panel \textbf{e} shows a steep slope with significant scenario comparisons (\emph{status-quo}>\emph{inLED}>\emph{curbless}), while panel \textbf{f} exhibits nearly horizontal lines with only one significant comparison (\emph{status-quo}=\emph{inLED}>\emph{curbless}). This suggests that the aversion to unconventional scenarios is caused mainly due to the proximity of cars rather than the proximity to pedestrians.
+
+% TREATMENT x SCENARIO (lv. 2)
+The analysis of the comparisons of the scenarios across information treatments (Level 2) is facilitated by counting the mint and light orange brackets shown as annotations on top of panels of \autoref{fig:violin_sign_structured_survey}. We observe that the scenario \emph{status-quo} receives significantly higher ratings than scenario \emph{curbless} in more questions within the \emph{sequential} group (4 questions) compared to the \emph{parallel} group (5 questions). 
+Similarly when comparing scenarios \emph{inLED} and \emph{curbless}: the \emph{sequential} group perceives scenario \emph{curbless} as less likely suited to cross the street at night and less attractive than scenario \emph{inLED}. In addition to these observations, the \emph{parallel} group is additionally less inclined to cross the street with a child and believes the street is less safe regarding interactions with cars.
+
+%TREATMENT (lv. 3)
+Even though the small sample size may hinder the ability to draw final conclusions for the within and between-subjects comparisons due to non-significant confidence intervals even in the presence of significant p-values, the information treatment (level 3) of our study seems to suggest a likely impact with respect to three additional questions: In scenario \emph{curbless}, participants belonging to the \emph{parallel} group exhibited a reduced willingness to cross the street with a child and appear to perceive the street as less safe regarding the interaction with cars compared to those in the \emph{sequential} group. In essence, the \emph{parallel} group seems to perceive scenario \emph{curbless} more negatively than the \emph{sequential} group. Conversely, in scenario \emph{inLED}, participants in the \emph{parallel} group appear to consider the street to be safer for pedestrians than those in the \emph{sequential} group. In summary, Level 3 differences seem to be most frequently observed in scenario \emph{curbless}, where factors such as willingness to cross the street with a child and perceived car safety are influenced by the presentation of information regarding the scenarios. 
+However, it is needed to further explore these trends with expanded studies (see \nameref{sec:stat_details} and \hyperref[subsec:limitations]{Limitations and Future Outlook}). 
+%We discuss this topic in the discussion section.
+
+\begin{figure}[hbtp!]
+\centering
+\includegraphics[width=\linewidth]{violin_plots_physio_MASTER_v7.jpg}
+\caption{Behavioural responses. Each panel shows a different response measured from the participants' behaviour, which reflects statistically significant differences ($p<0.05$) between \emph{information treatments}, \emph{scenarios}, or their interaction (Information treatments $\times$ Scenario). Confidence intervals for the estimates are shown between brackets.
+The participant's activity was divided into four subtasks, namely \emph{familiarization} with the virtual environment (\textbf{a}), \emph{approaching} the crossing (\textbf{b}-\textbf{c}), \emph{waiting} to cross (\textbf{d}), and \emph{crossing} (\textbf{e}). 
+The duration in seconds is shown on the y-axis for each subtask in panels \textbf{a}-\textbf{e}, and for the whole task in panel \textbf{f}.
+Panels \textbf{g} and \textbf{h} illustrate differences in uniformity of speed (measured as $\sigma_{speed}$) and the total walked distance within the VR environment.
+Panels \textbf{i}-\textbf{l} highlight differences in head movement.
+Specifically, we report the mean ($\mu$) and standard deviation ($\sigma$) of change in pitch (i.e., looking up or down, see panels \textbf{i} and \textbf{j}) and yaw (i.e., turning head left or right, see panels \textbf{k}) as well as the cumulative total angle change in direction of the three axes per second (panel \textbf{l}). 
+When shown, scenarios are grouped on the $X$-axis, featuring the aggregated distribution as a coloured box plot in blue, magenta, and bright orange. Violin plots show distributions for each information treatment within the same scenario: mint for \emph{sequential} and orange for \emph{parallel}. They are complemented by corresponding box plots displaying median values and interquartile ranges. For further details on the statistical methods see \nameref{sec:stat_details}.
+}
+\label{fig:violin_sign_phisiological}
+\end{figure}
+
+\paragraph{Duration.} 
+
+Overall, the largest differences concerning the \emph{duration} of the experiment are found in the subtasks approaching and crossing (panels \textbf{b}, \textbf{c} and \textbf{e} in \autoref{fig:violin_sign_phisiological}). 
+% lv 3 
+The results indicate that participants in the \emph{parallel} treatment took significantly longer to approach the crosswalk compared to those in the \emph{sequential} treatment ($N=266$, $p_{adj\ BY}=3.58e-03$), which is as well suggested by comparison with the \emph{inLED} scenario. 
+Similarly, the duration of waiting (panel \textbf{d} in \autoref{fig:violin_sign_phisiological}) was highest in the \emph{inLED} scenario ($p_{adj\ BY}=7.70e-03$).
+The general trend of increased duration for the \emph{inLED} scenario was also reflected in the duration of the whole experiment (panel \textbf{f} in \autoref{fig:violin_sign_phisiological}, $p_{adj\ BY}=3.45e-03$). The average total duration of the task increased from 43 \emph{s} (±22 s.d.) in the scenario \emph{status-quo} to 51 \emph{s} (±28 s.d.) in the \emph{inLED} scenario, while for \emph{curbless} the average duration of the entire task was 44 \emph{s} (±17 s.d.). Overall, the average duration of the whole task for all the scenarios and information treatment is 46 \emph{s} (±23 s.d.).
+
+The findings for crossing time (panel \textbf{e}) were in contrast to those for waiting and approaching. Specifically, participants took significantly longer to cross in the \emph{curbless} scenario compared to both the \emph{status-quo} ($p_{adj\ BY}=2.12e-07$) and \emph{inLED} ($p_{adj\ BY}=4.68e-06$) scenarios. This result is consistent with the fact that the \emph{curbless} scenario was the only one without a traffic light or in-pavement LEDs, allowing participants to take as much time as needed to cross. This could potentially explain the longer crossing times observed in panel \textbf{e}.
+
+%lv 2
+In comparing treatments across scenarios (level 2), the results indicate that the \emph{sequential} treatment exhibited a strict ordering of \emph{status-quo} < \emph{inLED} < \emph{curbless}. Likewise, the \emph{parallel} treatment showed an ordering of \emph{status-quo} $\approx$ \emph{inLED} < \emph{curbless}.
+
+\paragraph{Displacement.}
+In the following, we examine the participants' \emph{movement patterns}, which encompassed both their actual physical movements in a play area of 10m $\times$ 5m and their ability to ``teleport'' within the VR environment. We first calculated the participants' \emph{speed}, which was defined as meters moved per second. The standard deviation of speed ($\sigma_{\text{speed}}$) served as a proxy for the uniformity in movement pace. According to panel \textbf{g} in \autoref{fig:violin_sign_phisiological}, the standard deviation $\sigma_{\text{speed}}$ differed significantly across treatments in the \emph{curbless} scenario. Specifically, participants in the \emph{sequential} treatment exhibited more variation in their movement speed compared to those in the \emph{parallel} treatment.
+Our analysis of the overall distance walked (panel \textbf{h} in \autoref{fig:violin_sign_phisiological}) revealed the following ordering: \emph{status-quo} < \emph{inLED} $\approx$ \emph{curbless}. This effect was particularly pronounced in the \emph{parallel} treatment, as we observed a significant difference in distance walked between the \emph{status-quo} and \emph{inLED} scenarios for this treatment.
+
+\paragraph{Head movement.}
+During the VR experiment, \emph{head movement and displacement} was logged to quantify the exploration of the environment \cite{Bischof2020, VanHelvoort2020, Hu2017}. 
+The head movement for scenario \emph{curbless} was not recorded due to a bug. Consequently, we only report significant differences between scenarios \emph{status-quo} and \emph{inLED}.
+Our analysis shows that pitch (i.e., looking up and down) and yaw (i.e., turning head left and right) differed significantly across the treatments in terms of both, their mean ($\mu$) and standard deviation ($\sigma$) (panels \textbf{i}-\textbf{l} in ~\autoref{fig:violin_sign_phisiological}). Specifically, participants looked less up and down in the \emph{inLED} scenario compared to the \emph{status-quo} scenario, while they turned their head more from left to right in the \emph{inLED} scenario compared to the \emph{status-quo} scenario.
+In other words, the scenario appeared to influence participants' visual exploration patterns: the \emph{inLED} scenario required participants to focus more on exploring the ground plane, while the \emph{status-quo} scenario needed more exploration between the ground and eye-level plane.
+
+
+\begin{figure}[hbt!]
+\centering
+\includegraphics[width=\linewidth]{violin_plots_HR_adv_data_BY_v05.jpg}
+\caption{Physiological responses. Each panel presents statistically significant differences ($p<0.05$) of low-frequency/high-frequency (LF/HF) ratio metric based on the heart-rate data for different subtasks within the VR session task: subtask \emph{approaching} in panels \textbf{a}--\textbf{b} and whole task in panel \textbf{c}). Confidence intervals for the estimates are shown between brackets.
+When shown, scenarios are grouped on the $X$-axis, featuring the aggregated distribution as a coloured box plot in blue, magenta and bright orange. Violin plots show distributions for each information treatment within the same scenario: mint for \emph{sequential} and light orange for \emph{parallel}. They are complemented by corresponding box plots displaying median values and interquartile ranges. For further details on the statistical methods see \nameref{sec:stat_details}. 
+}
+\label{fig:violin_HR}
+\end{figure}
+
+\paragraph{Heart rate data.}
+\autoref{fig:violin_HR}, displays the \emph{Low Frequency} (LF)/ \emph{High Frequency} (HF) ratio (see \nameref{subsec:heart_rate_data}). It is interpreted as an index of autonomic balance, where higher values indicate greater sympathetic dominance and lower values indicate greater parasympathetic dominance \cite{shaffer2017overview}. 
+Panel \textbf{a} shows a significant difference between the \emph{status-quo} and \emph{curbless} scenarios ($N=266$, $p_{adj\ BY}=1.902e-02$).
+Moreover, panel \textbf{c} reveals a significant difference in the LF/HF ratio between treatments: \emph{parallel} viewers had a significantly higher ratio than \emph{sequential} viewers ($N=266$, $p_{adj\ BY}=9.925e-03$). Specifically, panel \textbf{b} shows how \emph{parallel} viewers had a significantly higher heart rate when \emph{approaching} the crossing than \emph{sequential} viewers ($N=266$, $p_{adj\ BY}=2.706e-02$). 
+
+\paragraph{Open-answer questions.} 
+The analysis of open-answer questions involved a two-stage process. First, all responses were read and labels were generated to summarise the answers in a meaningful way. Second, the labels were assigned using the LightTag software to ensure reproducibility.
+
+% ADVANTAGE/Disadvantage
+The participants provided feedback on the \emph{advantages and disadvantages} of the different street crossing scenarios (see \hyperref[apx:quest]{Questionnaires}).
+Regarding the \emph{status-quo} scenario, participants commonly noted advantages such as its safety ($n=19$), familiarity ($n=14$), and ease of understanding ($n=10$). However, the most commonly mentioned disadvantage was the wait times of pedestrians and the fact that there was only one designated spot for crossing the street ($n=15$).
+
+The \emph{inLED} scenario received mixed reviews from the participants. Among the advantages, the absence of a need to search for a crossing path for a long time was frequently noted ($n=10$). Moreover, participants appreciated the clear and visible markings of the crossing, particularly at night ($n=1$). Additionally, some participants found the scenario aesthetically pleasing ($n=4$). However, only a minority felt that the scenario was safe ($n=5$).
+The most commonly mentioned disadvantage was the perceived complexity of the scenario ($n=14$). Participants also found the setting unfamiliar, which could be a potential hurdle to widespread adoption ($n=8$). Interestingly, a considerable number of participants expressed concerns about the expensive cost of implementing and maintaining the inLED scenario ($n=6$).
+
+The \emph{curbless} scenario generated mixed feedback from the participants. Many participants noted the convenience of being able to cross the street whenever they wanted ($n=21$). Some considered the scenario cost-efficient ($n=4$).
+However, the overwhelming majority of participants did not feel safe when crossing the street ($n=24$). Some participants assumed the absence of visual cues meant that car drivers had no obligation to stop for pedestrians ($n=8$). Furthermore, a few participants found the scenario to be complicated and tiring ($n=6$).
+Interestingly, some participants also reported that cars frequently stopped too close to them, while they were crossing the street, which was a notable disadvantage ($n=3$).
+
+% CHANGE
+With regard to the different scenarios, participants were asked for their willingness to change their mode of transportation, and a range of responses was given. 
+The \emph{curbless} scenario received mixed feedback from the participants. Interestingly, the most common response was that participants did not want to be either a pedestrian ($n=8$) or a car driver ($n=8$) in the scenario. This might be due to the perception that scenario \emph{curbless} had an increased probability that cars could hit someone. Moreover, some participants specifically stated a desire to switch from being a pedestrian to being in a car (driver) ($n=6$). However, some participants found being a pedestrian in this scenario to be satisfactory ($n=5$).
+Regarding the \emph{inLED} scenario, a majority of participants stated that they were comfortable with being a pedestrian in the scenario ($n=7$). Similarly, for the \emph{status-quo} scenario, a comparable number of participants reported being fine with being a pedestrian ($n=8$).
+
+% DIFFERENCES 
+During the study, participants were asked to identify the differences they observed while crossing the street in different scenarios. The majority of participants noted that the crosswalk and traffic lights were the main differences they noticed (n=24). Notably, a significant number of participants identified safety as the primary variable that varied across scenarios (n=12). Interestingly, some participants believed that the primary difference was in the level of difficulty (n=4) or familiarity (n=4).
+
+
+\section{Discussion}
+% Main conclusion
+Our primary finding is that unconventional street layouts are less preferred and perceived as less safe in both the structured survey and open-answer questions. These results are mirrored by the heart rate data: We observe greater stress response in the \emph{curbless} scenario, as it is unfamiliar, perceived as dangerous, and requires more cognitive resources to navigate. Hence, in our study, the \emph{status-quo} street design is preferred over unconventional layouts. Nevertheless, in-street technology, such as presented in the \emph{inLED} scenario, is preferred over the \emph{curbless} scenario. Such technology can reserve areas for pedestrians and allows for flexible and adaptive use of space by time-of-day and day-of-week.
+
+The \emph{inLED} and \emph{curbless} are two extreme examples of shared space scenarios. Although there is no clear definition of shared space, all definitions agree that shared space is characterized by the removal of a clear separation between different road users \cite{KarndacharukTransRev2014} and integrating vehicular traffic into social space \cite{HamiltonBaillieEnv2008}. Research on shared space has resulted in mixed results, varying from pedestrians not minding to share space \cite{Hammond2013}, to pedestrians preferring dedicated facilities \cite{KapariasTranResF2012}. From a driver's perspective, shared space results in anxiety and unease to drivers, resulting in possible lower speeds and more attention being paid to other shared space users \cite{Moody2014}. 
+
+The \emph{open-answer questions} shed more light on the perceived differences between the different scenarios. A frequently mentioned concern was safety, which aligns with the results of the structured question. The frequent mentioning of familiarity by participants suggests the significant cognitive effort required to adapt to new traffic paradigms and a strong preference for the \emph{status-quo} scenario, which could potentially outweigh the benefits of adopting new transportation innovations due to the status quo bias \cite{samuelson1988status}. While the safety distance to stop did not vary between the scenarios from the participants' perspective, the stopping distance appeared closer for the participants. This insight is valuable for planners, who need to take into account the effects of removing visual cues in street designs.
+
+The \emph{inLED} scenario took the longest to complete, which is consistent with the open-answer questions, where participants mentioned confusion due to the overwhelming information displayed. 
+Interestingly, the \emph{curbless} scenario without a timing mechanism took the longest to cross. This finding suggests that the convenience of crossing the road can be increased by giving more time to pedestrians. 
+
+One indirect measure of presence in VR is head movement. Increased head movement indicates that individuals are likely to behave and judge as in reality \cite{Slater1998}. In two scenarios, head movement was recorded. Our study found that the scenario influenced participants' visual exploration patterns, with the \emph{inLED} scenario requiring more focus on the ground plane and participants turning their heads from the left to right (head yaw), and looking more up-and-down (pitch) in the \emph{status-quo} scenario. 
+This is intuitive, as the novel aspect of this scenario was the hexagonal road pavers that needed to be explored, directing more attention to the left and right rather than up and down. 
+Exploratory research furthermore indicated that an increased head yaw, or scanning, might be due to higher anxiety \cite{WonCyber2016}. Lower self-reported safety for the \emph{inLED} scenario also points to higher anxiety in this scenario. 
+
+% Open-answer questions
+The content analysis of the answers given to the \emph{open-answer questions} delivered further intriguing insights. 
+Participants commented on the diverging maintenance costs for the different scenarios, suggesting that they should be considered not only as road users but also as citizens and taxpayers. This indicates the importance of not only highlighting the immediate benefits and drawbacks for road users but also of considering organizational issues such as costs. 
+
+When asked about their willingness to change their mode of transportation in different scenarios, participants provided surprisingly mixed responses. In the \emph{curbless} scenario, many participants were afraid of hitting pedestrians as car drivers and therefore explicitly stated not wanting to drive a car. On the contrary, other participants expressed fears of being hit by a car as pedestrians and, therefore, preferred to be car drivers. These findings highlight the importance of planners to consider the unintended consequences of their designs on the behaviour of road users if the safety and equity of road use are ultimately improved.
+
+When asked to state the differences, many participants identified safety, familiarity, and difficulty as key variables that varied across scenarios. 
+This suggests that participants were more focused on the affordance of the space \cite{GibsonJames1979} and the behavioural effects of the new installations than on physical features. 
+This highlights the importance of considering how citizens use and feel about a space when designing transportation infrastructure.
+
+% Comparing treatments
+In our experiments, \emph{parallel} viewers tended to favour conventional scenarios over unconventional ones more frequently than \emph{sequential} viewers. This finding indicates that having the ability to compare three street scenarios enabled participants to focus primarily on the drawbacks (instead of the advantages) of a novel scenario compared to a familiar one. It is likely not coincidental that the presentation of information made the greatest difference in questions relating to the most vulnerable traffic participants, namely children, and the transport mode with the greatest potential to cause harm: a car. Furthermore, our study found that \emph{parallel} viewers needed a longer approach time to cross, implying greater caution than \emph{sequential} viewers. 
+Furthermore, the information treatment appears to influence the comprehension of the scenarios. Specifically, \emph{parallel} viewers showed a more constant movement pace, implying they may have comprehended the single scenario better than \emph{sequential} viewers.
+These findings are mirrored by heart rate data: \emph{parallel} viewing caused a shift towards sympathetic dominance, frequently associated with stress or alert states.
+
+\section{Conclusions}
+
+\subsection{Summary}
+
+This study utilized immersive VR to evaluate the feasibility of three distinct street design scenarios that could be implemented in the near future and the impact of communication strategies. The scenarios evaluated were: \emph{status-quo}, \emph{inLED}, and \emph{curbless}. Potential benefits of these layouts were highlighted through a different allocation of street space by time-of-day. Half of the participants viewed three videos depicting the design scenarios sequentially, whereas half of the participants viewed the videos simultaneously in split-screen, prior to being immersed in VR. After performing the task of crossing the street in each of the three scenarios in a randomized order, participants answered a series of questions related to safety and perceived stress, as well as provided open-ended responses. Throughout the experiment, we recorded physiological data (heart rate) and tracked participants' behaviour through head movements and displacement while immersed in VR. 
+
+\subsection{Conclusions}
+
+\paragraph{Value of integrating people's feedback.} 
+Overall, our findings highlight the importance of seeking early feedback in any urban planning action and aligning with current practices of incremental and tactical urban planning. Participants' assumptions that the absence of visual cues influences car driver behaviour emphasize the importance of street design elements (e.g. markings, signs, delineated areas), to ensure driver awareness of their obligations to stop for pedestrians. 
+
+\paragraph{Comparing between options improves feedback.} We also found that the ability to compare multiple scenarios allowed participants to more easily identify the drawbacks of a novel scenario compared to a familiar one. 
+Physiological data supported our qualitative findings, suggesting increased perceived and measurable stress in unfamiliar scenarios. 
+
+\paragraph{Communication is important.} By comparing two communication strategies, this study points out how this can be as relevant as the actual content of the proposed changes in cities. This highlights the importance of informing people effectively, not only focusing on the technical design of proposals for successful policy-making.
+
+\paragraph{Tangible, designed visual cues to support street use are important.} Furthermore, we highlight the importance of tangible design elements, such as signs and demarcated areas, which increase perceived safety. We also recommend retaining simple markings as they positively change the perception of space.
+
+\paragraph{Consequences and behavioural changes centre people's attention.} Finally, our study shows that participants were more focused on the consequences of changes, the affordance of space, and the behavioural effects of new layouts rather than objective differences. This underscores the need for a user-centred approach when designing streets to meet a community's preferences and needs.
+
+\paragraph{Importance of people-centred urban planning innovation.} In conclusion, our study has provided valuable insights into the impact of unconventional street layouts on road users' behaviours and perceptions. Our findings suggest that such layouts are generally perceived as less attractive, less safe, and less preferred by participants. This highlights the importance of designing streetscapes that meet community needs and preferences and providing opportunities to familiarize oneself with new scenarios.
+We recommend that planners and policy-makers consider multiple dimensions of street design innovations, including organizational issues, costs, and other benefits and drawbacks for citizens. Additionally, we urge planners to take into account citizen perception to prevent unintended consequences such as the switch to less sustainable solutions. 
+
+\subsection{Limitations and Future Outlook} \label{subsec:limitations}
+
+Real-world experiments are, of course, expected to provide the highest ecological validity, but they are unfeasible in the context of the future scenarios studied by us \cite{Dubey2021}. It is known, however, that the use of VR technologies to test responses of subjects to changes in built environments can provide high ecological and internal validity \cite{Loomis1999} through realism \cite{Angulo2023} and experimental control \cite{Guo2022}. On one hand, ecological validity reflects the correspondence between experimental settings and real-world situations. On the other hand, internal validity allows to isolate causal relationships. Nevertheless, more extensive or longitudinal VR studies would be favourable, as subject familiarity with the scenarios may change over time, thereby increasing the likelihood that novel scenarios would eventually become acceptable. Hence, our VR study might underestimate medium-term public acceptance of new street layouts. Among others, the real-world observation of others navigating safely might enhance perceived safety. However, (perceived) safety issues during a transition phase would probably remain. 
+
+Additionally, our focus on futuristic scenarios (reliant on technology that is not yet fully established) may also limit current societal acceptance. In general, head movement and other users' physiological and behavioural response patterns might be underestimated compared to real-world scenarios, as the VR settings did not feature noise, weather conditions and other sources of environmental variability. Furthermore, a higher diversity of types of street users (including bikes, eScooters, and other vulnerable people) could help to increase the realism of the virtual environment. Accordingly, multi-user experiments might benefit from even higher levels of realism and complexity, in particular regarding enhanced interactions between vehicles, environment and people. Generally, well-controlled VR experiments contrast with real-life unpredictability, which might have a larger impact on physiological responses than our information treatment. 
+
+In this context, we want to point out some issues with heart rate (HR) and physiological sensing. While some measurements, for example, those of electrodermal activity (EDA) or heart rates have become an experimental standard to assess stress levels, some would also want to consider respiration rates, pose estimation through computer vision techniques, and eye tracking for gaze and pupil change analysis. Furthermore, the use for example of electrocardiography (ECG), which can improve HR collection data, electroencephalography (EEG), or even functional magnetic resonance imaging (fMRI) scans could provide additional insights. In this context, one needs to consider additional ethical issues, including the question of whether more invasive or pervasive monitoring would be justified by the benefits created. Many of these measurements would not be feasible or desirable in real-world applications or may raise significant issues with regard to the protection of data or subjects. One should also consider the principle limitations of data-driven approaches, particularly when inferred variables are involved, i.e. variables other than those measured or measurable directly. In fact, one should be mindful that many data science applications involve a considerable amount of challenges related to matters of context, interpretation, and causality \cite{Caldarelli2023}.
+
+Further note, while the sample size of 43 participants used in this study with repeated measures appears to be limited, it is still comparable to other recent experiments using VR technologies studying pedestrian behaviour in built environments \cite{Oselinsky2023,Angulo2023, Guo2022, AstanehAsl2023, Qi2023, Zito2015, Feldstein2020}. Moreover, our research has still precision and statistical power to provide valuable insights into most of the differences within and between subjects explored. Nevertheless, future research might benefit from increasing the number and diversity of participants.
+Additionally, the study of effective communication strategies in the context of informing about public policy and urban design would benefit from a more comprehensive and detailed design of alternatives.
+
+Another challenge in VR experiments replicating large-scale environments is space availability to effectively and realistically represent movement through the virtual world. Apart from "teleporting" and controller-based displacement already implemented in this study, the use of treadmills may provide a more consistent collection of data regarding displacement and pose, independently of environment size. Overall, the study of the spatial data could unravel insights regarding user occupancy of space and their relationship with other elements located in the environment.
+
+\section{Materials and Methods}\label{sec:MaterialsAndMethods}
+
+\paragraph{Experimental design.}
+The experiment was conducted in collaboration with the Decision Science Laboratory at ETH Zurich. The laboratory was responsible for participant recruitment and payment, ensuring that experimental data and personal information were kept separate and safe by design. The study was preregistered \cite{ArgotaSanchez-Vaquerizo2022} and received IRB approval from the Ethics Commission of ETH Zurich (IRB Approval Date: 2021-01-28, IRB Approval Number: EK 2020-N-183). All experiments were performed in accordance with applicable guidelines and regulations. All participants provided written informed consent before they participated in the experiment and were compensated for their time according to the laboratory's payment scheme.
+
+% SCENARIOS and USAGE PATTERNS
+The participant was briefed to cross the street in three different scenarios. Through this, a participant would experience three different levels and strategies of implementation of new technologies applied to street design with the interplay of autonomous vehicles. 
+To that end, we designed three different street environments (\autoref{fig:scenarios}) for our VR experiments:
+The \emph{status-quo} scenario served as a baseline, with the street characterized by regular sidewalks and a traffic light controlling the pedestrian crossing.
+The \emph{inLED} scenario allowed for a dynamic allocation of uses, assuming a smart pavement consisting of hexagonal modular pavers \cite{Ratti2018,Larrard2013} incorporating LEDs, which are capable of changing colour based on the intended use of the street.
+In contrast, the \emph{curbless} scenario relied on smart vehicle sensing and the adaptive behaviour of people, enabling a dynamic use of the space.
+Consequently, these diverse scenarios put the participants in the position to answer a series of related questions.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\linewidth]{snapshots_escenario_config_v3.jpg}
+\caption{Participants crossed a street wearing VR headsets in three different design scenarios: conventional traffic light controlled pedestrian crossing (\emph{status-quo}, left), dynamic pavement for right-of-way allocation (\emph{inLED}, centre), and flat street (\emph{curbless}, right). Additionally, each traffic scenario was presented for two different times of the day with distinctive lighting, use, and traffic conditions: morning rush hour (top row) and evening traffic (bottom row). For more details, see \autoref{tab:scenarios-features-motivations}.}
+\label{fig:scenarios}
+\end{figure}
+
+Apart from the differences in designs, all three scenarios were designed similarly (\autoref{fig:scenarios-plans}). Each scenario featured a park adjacent to a straight long road with curves at both ends of the road. The curves blocked the line of sight and allowed for the generation of pedestrians and cars out of sight of the participant. The participant could freely move in this area but was discouraged from moving too far in one direction along one side of the street, namely by limiting teleportation to certain areas (i.e. alongside the street) and potentially by the instructors reminding them that their task was to cross the street. 
+
+Each of the three street scenarios was experienced twice in two different configurations by all the participants (i.e., within-subject factor), once during rush hour and once during the evening. The scenarios were designed such that street usage varied throughout the day. During rush hour, the street was characterized by a steady stream of commuters, while in the evening, it was used by families as a space for play and dining. Only the order of the scenarios was randomized across participants.
+
+\begin{figure}[hb!]
+\centering
+\includegraphics[width=\linewidth]{scenarios_plans_v3.jpg}
+\caption{Floor plans of the three designed VR scenarios (\emph{status-quo}, \emph{inLED}, and \emph{curbless}) and the two configurations (\emph{morning rush hour}, and \emph{evening}). The red line highlights the area where teleporting was allowed. For more details, see \autoref{tab:scenarios-features-motivations}.}
+\label{fig:scenarios-plans}
+\end{figure}
+
+% TREATMENT
+Prior to starting the VR task, participants filled out an SSS for establishing a stress level baseline for after-treatment differences assessment (see \textbf{a} in \autoref{fig:flowchart}). Then, participants watched a 3-minute video to become familiar with the traffic environment. The presentation of the videos varied between subjects: 
+Participants in the \emph{sequential} group watched videos from a bird's-eye view for every scenario separately in sequential order matching the randomized order experienced afterwards for performing the task in the three VR scenarios.
+Instead, participants in the \emph{parallel} group watched the same videos, but on a split-screen, simultaneously in a side-by-side layout, allowing for a direct comparison across scenarios. This gave them additional qualitative information about each street design.
+In both cases, the window for the video clip of each scenario was depicted in the same size and aspect ratio: i.e., each scenario video window occupied 1/3 of the width of the screen, resulting in \emph{sequential} screen layout having one single video playing with most of the screen empty, and \emph{parallel} visualization having all the three videos filling the entire width of the screen (see \textbf{b} in \autoref{fig:flowchart}). In \autoref{tab:scenarios-features-motivations} a summary of the treatments for the experiment design is shown with a motivation of the interventions, both for the between-subjects information treatments and for the within-subjects scenarios.
+
+%TASK
+The task that participants had to perform was identical in every design scenario and configuration (see \textbf{d} in \autoref{fig:flowchart}). Moreover, they had two attempts to perform the task per configuration in case of being hit by a car and failing. To complete the task, participants had three locomotion options, which could be freely switched between (1) physical walking and turning, (2) virtual walking and turning using a controller, and (3) teleportation. Teleportation allowed participants to move automatically to a desired location by pointing the controller and was only possible on the sidewalk and restricted in range to 8 meters to prevent participants from simply teleporting across the street (\autoref{fig:scenarios-plans}). The virtual walking and teleportation options were introduced due to the large space requirements of the VR setting, although participants also had ample physical space to move around in a 10m $\times$ 5m play area. 
+After ensuring a comfortable fit of the head-mounted display, participants were given two controllers and found themselves in a virtual tutorial environment. An instructor guided them through a fixed tutorial sequence for getting accustomed to VR and learning the different locomotion techniques (see \textbf{f} in \autoref{fig:flowchart}). 
+
+% QUESTIONNAIRES
+After completing the task, in both configurations for each design scenario, participants were asked to fill in a survey assessing their emotional state and perception of the scenario (see \textbf{e} in \autoref{fig:flowchart} and \hyperref[apx:quest]{Questionnaires}). To complete the survey, they removed the VR headset and switched to a desktop computer. The survey included questions related to stress, perceived safety, and willingness to cross and share the street.
+At the very end of the experiment, after performing the task in the three scenarios, participants were asked to reply to a set of open-answer questions regarding general impressions and behaviour change based on the scenarios, as well as general socio-demographic data. All these questions that were answered are listed in the paragraph titled "Questionnaires". All the questionnaires were designed, hosted and served from the web service provided by Qualtrics and the resulting data stored in their servers.
+
+\paragraph{Technical details.}
+% SENSORS
+To gain a deeper understanding of how street design influences the walking experience of pedestrians \cite{coensel2011effects,wilkie2013influence}, we captured participants' physiological responses. Specifically, we measured participants' heart rate and heart rate variability, as well as their activity levels, using a breast strap (Garmin HRM-Pro) connected through a smartwatch (Garmin Forerunner 55) and a smartphone (HTC Desire 19+) via Bluetooth to the App Garmin Connect to synchronize and store the anonymous data.
+
+%%% Technical details 
+For conducting the VR part of the experiment, our setup consisted of a Meta Quest 2 head-mounted display and hand controllers connected to a desktop computer (Intel® Core™ i7-11700 11th generation [8 Cores, 16 MB Cache, 2,5 GHz up to 4,9 GHz], NVIDIA® GeForce® RTX 3070™ 8 GB GDDR6; 32 GB [16 GB x 2, DDR4, 2.933 MHz]; M.2-PCIe-SSD with 1 TB + SATA with 1 TB, 7200 1/min) via Air Link. 
+The VR application was developed in Unity 2020.3.32f1 using the C\# programming language. The virtual environment depicted in \autoref{fig:scenarios} was designed with high-quality assets from the Unity Asset Store ("Module Based City Pack" and diverse cars). Realistic, rigged 3D models of pedestrians were taken from Mixamo \cite{mixamo}.
+
+\input{chapters/01_VR/tables/tab_scenarios_features_motivations_v2}
+
+\paragraph{Data collection and pre-processing.}
+
+Forty-three participants ($n_{participants}=43$) were randomly assigned to the \emph{sequential} or \emph{parallel} information treatment group (between-subjects factor) and completed the task of crossing the virtual street in a randomized order across the three scenarios (within-subjects factor): \emph{status-quo}, \emph{inLED}, and \emph{curbless}. Each scenario was repeated at least twice, following the fixed order for the two configurations: morning rush hour (\emph{RH}) and evening (\emph{EV}) (see panel \textbf{d} in \autoref{fig:flowchart}). In cases of task failure, additional attempts were made, providing participants with second opportunities to cross the street again in the formerly failed scenario and configuration (see Tables~\ref{tab:summary_participants_sessions} and \ref{tab:scenarios-features-motivations}). No participant reported experimental fatigue either verbally during the experiment or in the free-answer questionnaire.
+
+Physiological measurements were taken continuously from the beginning of the experiment until the end resulting in a continuous time series (more details in paragraph \emph{Heart Rate data}). Behavioural data were taken separately at every VR session, defined as every run to perform the task in a given scenario and configuration until the participant accomplished crossing the street or failed because of being hit by a car ($n_{sessions}=266$). Behavioural data were computed from the VR environment logs, which recorded the position (\emph{x}, \emph{y}, \emph{z}) and orientation of the VR headset in three angles (\emph{pitch}, \emph{yaw}, \emph{roll}). From this raw log data, \emph{distance walked}, \emph{speed}, and angle change for \emph{pitch}, \emph{yaw}, \emph{roll}, and for\emph{total angle} (as the sum of \emph{pitch} and \emph{yaw}) were computed.
+The structured self-reported survey (comprising SSS, acceptance, safety perception and assessment of willingness to cross) was answered after completing an entire scenario in both configurations ($n_{structured\ surveys}=129$). Physiological and behavioural time series were synchronized and matched. Later physiological continuous data was cropped according to the starting and ending time of each session to have a combined time series per VR session including physiological and behavioural data.
+
+We recorded the first-person perspective in VR of participants for the entire duration of the experimental session.
+These recordings were later manually timestamped, which allowed mapping all data points to four different subtasks.
+The first subtask, which involved participants exploring the virtual environment, was labelled as \emph{familiarization} (1). Following this, participants typically walked towards the curb (or perceived border of the area suitable for cars) in preparation for the road-crossing task, which we referred to as \emph{approaching} (2). Subsequently, each participant had to wait in front of a (virtual) crosswalk, a subtask we termed \emph{waiting} (3) until the red light turned green or he felt it was safe to cross. Finally, participants completed the task by crossing the street, a subtask we called \emph{crossing} (4). The subdivision of the task into these subtasks facilitated comparisons of completion times across the different stages as well as highlighting particular differences within the task. Consequently, time series are cropped as well to match these subtasks. In the case of the lack of one of the subtasks (e.g., because a participant did not wait before starting to walk or before crossing), missing values are imputed with the closest 10 seconds of data from the contiguous subtasks.
+Time series for each session are summarised by computing their means ($\nu$), medians ($\eta$), and standard deviations ($\sigma$). These values were later used for statistical analysis.
+
+The answers to the structured self-reported survey were normalized for each participant by computing the differences between each value reported after experiencing a scenario and the initial baseline value registered by each participant at the beginning of the experiment. These differences are later used in the statistical tests.
+
+
+\paragraph{Heart rate data.}\label{subsec:heart_rate_data}
+Participants in VR environments are exposed to a variety of stimuli that can elicit a variety of physiological and psychological responses \cite{martens2019feels}. A variety of sensors, including heart rate sensors, head movement sensors, and displacement sensors, can be used to measure these responses. Heart rate variability (HRV) is a measurement of the time difference between successive heartbeats. It is a useful indicator of the body's physiological response to stress and other stimuli. Heart rate sensors can be used in VR experiments to track participants' HRV as they navigate virtual environments. This data can reveal how participants react to various aspects of the environment, such as visual cues or sound effects.
+
+%methodology
+We collected heart rate data continuously, at a rate of 1 Hz from the start to the end of the VR experiment. Outliers in the dataset were removed to guarantee data quality. In such an experimental setting, it is possible to have outliers in the collected heart rate data. Outliers can be caused by a variety of factors, including measurement errors, physiological abnormalities, and participant noncompliance. While pre-processing the data, we looked at the outliers and removed them in a way that did not skew the findings. We resampled and adjusted the data to one sample per second \cite{Chen2018, Shintomi2022, Nishikawa2018, Antoniou2020} in order to provide a good accuracy to the HRV analysis and sufficient sampling points \cite{Brisinda2020}. Timestamps between different sensing sources, including the VR environment logs and sensing devices, were matched to accurately align data across sources. The whole heart rate time series for each participant was split into individual sessions corresponding to each VR scenario. 
+
+In VR experiments, analyzing the Power Spectral Density (PSD) of physiological signals such as heart rate can provide insights into the autonomic nervous system response, which can help in understanding the participants' emotional or cognitive states \cite{kamath1993power,anderson2017relaxation}. The PSD represents the power of various frequencies in a signal mathematically. The PSD gives information about the distribution of power at different frequencies in the heart rate signal in the case of heart rate variability. The PSD's HF component is linked to parasympathetic (vagal) activity, whereas the PSD's LF component is linked to sympathetic and parasympathetic activity \cite{montano1994power}. 
+
+We analyzed the PSD of heart rate data from various participants to investigate the effects of diverse scenarios in a VR experiment on the autonomic nervous system. We used a wearable device (Garmin HRM-Pro) to collect heart rate data, and each participant went through a series of VR scenarios, each intended to elicit a particular emotional response. We used the Welch method to analyze PSD because it reduces noise and gives a more accurate estimate of the PSD \cite{welch1967use}. To obtain a more accurate estimate of the PSD, the Welch technique divides the signal into overlapping segments and then averages the periodograms of these segments. The technique reduces noise caused by the signal's non-stationarity by using overlapping segments, and it improves the estimate of the PSD by averaging the periodograms. The PSD was then integrated into the LF (0.04-0.15 Hz) and HF (0.15-0.4 Hz) bands to determine the total power in each band. The LF/HF ratio was determined as the ratio of LF power to HF power. The LF/HF ratio is a commonly used metric for autonomic nervous system activity. A higher LF/HF ratio is commonly read as a sign of sympathetic dominance or a shift in the balance of sympathetic and parasympathetic activity toward sympathetic dominance. This could be due to stress, nervousness, or other conditions that cause sympathetic activation. A lower LF/HF ratio, on the other hand, is frequently linked with parasympathetic dominance or a shift towards parasympathetic activity, which may be associated with relaxation and recovery \cite{shaffer2017overview}.  
+
+\paragraph{Statistical details.}\label{sec:stat_details}
+
+% Normality
+To characterise the independent and dependent variables of the experiment, we employed the Shapiro-Wilk test \cite{Shapiro1965} to check normality and the Levene test \cite{Conover1981} for equal variance. Different statistical methods were applied depending on the type and distribution of the data for assessing the association between variables and the informational treatments and scenarios. However, as the majority of the experiment variables did not follow a normal distribution, we utilized non-parametric tests to evaluate differences across treatments and scenarios.
+
+% Fisher's exact test for categorical responses
+For categorical variables, both independent (i.e., gender, experience with VR experiments, ownership of a car, driving license, and walking habits,) and dependent (i.e., counts of failed attempts for crossing the street, favourite scenario reported at the end of each experiment) a two-tailed Fisher's exact test \cite{Fisher1922} was used on the contingency table of occurrences for each treatment group due to the small sample size of some of them (i.e., below 5).
+
+We statistically tested the independence of the treatments. The only variables from the socio-demographic data that were not completely randomized and showed unbalance with regards to the treatment groups were ownership of a car ($N=43$ $p_{two\text{-}sided\ Fisher}=1e-03$), driving license ownership ($N=43$ $p_{two\text{-}sided\ Fisher}=2.499e-02$), and reported previous experience in VR experiments ($N=43$, $p_{two\text{-}sided\ Fisher}=5e-04$). Hence, we controlled for the effect of these covariates in combination with the main interventions (\emph{information treatment}, and \emph{scenario}) in all the statistical analyses and they didn't show any significant effect on the responses ($p>0.05$).
+
+% ART ANOVA
+For the analysis of the effects of the interventions, we performed an Aligned Rank Transform (ART) ANOVA test. This allowed us to perform factorial non-parametric analyses when violations in the assumptions of normality and variance were present and it could handle repeated measures \cite{Wobbrock2011} as in the case of the mixed experiment designed. 
+
+We tested for the separated effect of each intervention ($\textit{Response} \sim \textit{Information treatment} + (1|\textit{Participant})$ and $\textit{Response} \sim \textit{Scenario} + (1|\textit{Participant})$) and the interaction between them ($\textit{Response} \sim \textit{Information treatment} \times \textit{Scenario} + (1|\textit{Participant})$). Given the repeated measures design of the experiment, the main interventions (\emph{information treatment} and \emph{scenario}) were considered as fixed effects, and the repeated measures on the participants on consecutive sessions across scenarios were included as a random effect ($(1|\textit{Participant})$).
+
+In those response variables where the random effect for each participant was not significant, an alternative non-parametric Kruskal-Wallis H test for the analysis of variance\cite{Kruskal1952} was performed for robustness, whose results are reported and shown in figures. No differences regarding the significance of the main effects were found between both procedures.
+
+The sample size (n) for the omnibus analysis of variance changed depending on the response variables and the number of repeated measures taken over the number of participants ($n_{participants}=43$). Dependent variables resulting from the structured self-reported survey were recorded every time after each scenario ($n_{structured\ surveys}=129$, $n_{structured\ surveys\ per\ scenario}=43$, $n_{structured\ surveys\ Sequential}=63$, $n_{structured\ surveys\ Parallel}=66$). Differently, behavioural and physiological responses were taken during each session ($n_{sessions}=266$).
+
+In the case of statistical significance ($p<0.05$) of the omnibus test for variance, it follows a posthoc test to determine the statistical significance of their differences. In the case of using the ART procedure, we performed a contrast multifactor test at three different levels (between \emph{information treatments}, \emph{scenarios}, or their interaction \emph{Information treatments × Scenario}) using the algorithm ART-C, which is an extension of the former to reduce the Type I error rated with higher statistical power than the t-test, Mann-Whitney U test, Mann-Whitney-Wilcoxon test, and ART test, particularly for nonconforming data \cite{Elkin2021}. Alternatively, for the posthoc test after the Kruskal-Wallis test, we used a two-sided Mann-Whitney-Wilcoxon test \cite{Mann1947}. Finally, p-values are adjusted for the multiple comparisons using the Benjamini-Yekutieli (BY) method \cite{Benjamini2001}. This adjustment controls Type I error of multiple comparisons based on the \emph{false discovery rate} (FDR), which improves the statistical power when a large number of comparisons are simultaneously tested\cite{Benjamini1995}. BY is a conservative test and compromises slightly the discovery rate by not making assumptions on the dependency of hypotheses. The annotations \cite{florian_charlier_2022_7213391} on top of each panel in Figures \ref{fig:violin_sign_structured_survey}, ~\ref{fig:violin_sign_phisiological} and ~\ref{fig:violin_HR} display the significant results ($p<0.05$) of the contrast multifactor pairwise posthoc tests for the three levels.
+
+In some cases, after performing a detailed assessment of the distribution of response variables in \emph{information treatment} groups within \emph{scenarios} (i.e., interactions $\emph{Information treatment} \times \emph{Scenario}$), and for the within-scenario pairwise contrast tests, a one-sided Mann-Whitney-Wilcoxon test can be used, with a significance level $p < 0.1$, for its higher power due to the particular characteristics of the compared distributions which can allow making a strong hypothesis about the values \cite{Fagerland2009, Fuest2020}. Simultaneously, to ensure the robustness of the results and control Type II error and lack of precision for the estimates due to small sampling rate \cite{Lakens2022}, we compute the confidence intervals using bootstrapping \cite{DiCiccio1996} and specific implementations for non-parametric tests \cite{Campbell1988}. Hence, only  differences with significant p-values ($p_{ART\text{-}C\ adj\ BY}<0.05$ or $p_{MMW\ adj\ BY}<0.1$) and significant confidence intervals are highlighted in Figures \ref{fig:violin_sign_structured_survey}, \ref{fig:violin_sign_phisiological} and \ref{fig:violin_HR}.
+
+
+\subsection{Questionnaires}\label{apx:quest}
+
+Answers to the following questions were recorded using Qualtrics.
+
+\noindent \textbf{Open-answer questionnaire}
+Participants were provided with an open text field, where they could write as much as they wanted in response to the following questions:
+\begin{itemize}
+    \item In your opinion, what are the main advantages of each of the three scenarios? What are the main disadvantages?
+    \item What are the most noticeable differences between the three scenarios for you?
+    \item For each or any scenario, would you want to change your usual mode of transportation and why?
+\end{itemize}
+
+\noindent \textbf{Socio-demographic questionnaire}
+\noindent The socio-demographic questionnaire was answered at the end of the experiment.
+    \begin{itemize}
+    \item In which country/city do you live? (dropdown menu w/ list of countries)
+    \item In which city were you raised? (dropdown menu w/ list of cities)
+    \item How do you define your neighborhood? (city center/downtown, compact walkable neighborhood, low density suburb, rural area/village)
+    \item What is your year of birth? (open field, only NATURAL numbers allowed)
+    \item I identify as (male, female, non-binary/third gender, prefer not to say)
+    \item What is your subject of study/profession? (dropdown menu with ETH-specific choices)
+    \item How often did you take part in experiments? (0, 1--3, >4)
+    \item Do you have experience with VR? (Y/N)
+    \item Do you have a driving license? (Y/N)
+    \item Do you own a car? (Y/N)
+    \item How many kilometers do you drive per week on average (0, <10, 10--50, 50--100, >100).
+    \item What is your preferred mode of transportation for your daily chores (work, groceries, etc.)? (walking, bike, public transportation, motorbike, car)
+    \item Do you walk (>500 m) daily? (Y/N)
+    \end{itemize}
+
+
+\noindent \textbf{Short Stress State (SSS) Questionnaire} \label{apx:ssq}
+
+\noindent All of the items of the short stress state questionnaire \cite{helton2004validation} are answered on a 10-point scale, once before and subsequently after each scenario.
+
+\begin{multicols}{3}
+    \begin{itemize}
+    \item I feel dissatisfied.
+    \item I feel alert.
+    \item I feel depressed. 
+    \item I feel sad.
+    \item I feel active.
+    \item I feel impatient. 
+    \item I feel annoyed. 
+    \item I feel angry.
+    \item I feel irritated. 
+    \item I feel grouchy.
+    \end{itemize}
+\end{multicols}
+
+\noindent \textbf{Safety, willingness, attractiveness}
+\label{apx:PLOS}
+\noindent In addition to the short stress state questionnaire, the following questions were asked after participants encountered each street scenario:
+
+\begin{itemize}
+\item How safe do you feel due to the proximity and number of pedestrians/cars? (1--7)
+\item How willing are you to cross the street with a kid/at night? (1--7)
+\item Please rate how attractive you found the scenario as a pedestrian. (0--5)
+\end{itemize}
+
+% \section{Additional information}
+
+% \noindent \textbf{Acknowledgements}
+\section{Acknowledgements}
+JASV, CIH, SM, MM, MS and DH acknowledge support through the project ``CoCi: Co-Evolving City Life'', which has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme under grant agreement No. 833168.
+
+The authors would like to express their gratitude to several individuals who provided valuable assistance and support during this study. We thank Stefan Wehrli and Manuel Widmer from the Decision Science Laboratory (DeSciL) at ETH Zürich for their expert feedback on experimental methods, as well as for their invaluable assistance in carrying out the experiments. We are also grateful to Michal Gath Morad for providing insightful comments during a productive Zoom call. Additionally, we extend our thanks to Fabian Schläfli for his thoughtful feedback on the project during a helpful Zoom call. Their contributions were instrumental in the successful completion of this research, and we deeply appreciate their time, effort, and expertise contributed. \\
+
+% \noindent \textbf{Author contributions statement}
+% JASV proposed and designed the three scenarios and co-designed the virtual traffic situations. He supervised the students, performed the data processing and statistical analysis, and contributed to drafting, writing and reviewing the manuscript, and the figures.
+% %
+% CIH worked out the details of the treatment variations and supervised the students. She co-developed ideas for scenarios and situations, drafted the hypotheses, and introduced the idea of using sensors to monitor physiological data. Furthermore, she specified procedural details with the Decision Science Laboratory (DeSciL) and acquired ethics approval. She also contributed to writing the manuscript, the statistical analysis, and particularly the stability point analysis.
+% %
+% SM contributed technical details on responsive street technology and searched for appropriate sensors as well as papers describing a connection between sensor data and behaviour. He performed heart rate data analysis and also contributed to writing the manuscript.
+% %
+% MS and MM developed the virtual reality (VR) setting and contributed to preprocessing the data and writing the manuscript.
+% %
+% DH proposed to study adaptive infrastructures and flexible uses of streets, acquired funding, engaged the VR developers, provided feedback and ideas, and contributed to the manuscript.
+% %
+% MvE read the paper and provided feedback on experimental details. He also contributed %will contribute 
+% a section on pedestrian-vehicle interaction.
+% %
+% All authors critically reviewed and edited the manuscript and approved the final version for submission. \\
+
+
+% \noindent \textbf{Data availability statement}
+% To ensure the transparency and reproducibility of our research, we will make raw and processed data, analysis scripts and code publicly available after acceptance via an open-access GitHub repository. The working repository, \url{https://github.com/ethz-coss/VR_future_streets}, can be accessed upon invitation.\\
+
+% \noindent \textbf{Competing interests}
+% The authors declare no competing interests.
+
+% \clearpage
+% \bibliography{references}
+
+% \end{document}

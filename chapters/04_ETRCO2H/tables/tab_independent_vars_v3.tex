@@ -1,0 +1,28 @@
+% \usepackage{tabularray}
+\begin{table*}
+\centering
+\caption{Description of the selected independent variables for the Hurdle model and data sources. $(o/d)$ refers to these variables referenced both to origin and destination zones. Otherwise, they are origin-destination relation metrics.}
+\label{tab:hurdle_ind_vars}
+\resizebox{\linewidth}{!}{%
+\begin{tblr}{
+  hline{1} = {-}{0.08em},
+  hline{2} = {-}{0.05em},
+}
+\textbf{\textit{Independent variable}}        & \textbf{Description}                                                                                               & \textbf{Source}                         \\
+\textit{quickest\_traveltime}                 & {Quickest travel time between the centroid of~\\the origin and destination areas (in seconds).}                    & OSMNX and OSM                           \\
+\textit{quickest\_route\_centrality\_mean}    & {Mean of the centrality of the zones crossed by~\\the quickest route between origin and destination.}              & OSMNX and OSM                           \\
+\textit{quickest\_route\_centrality\_max}     & {Maximum value of the centrality of the zones crossed\\by the quickest route between origin and destination.}      & OSMNX and OSM.                          \\
+\textit{quickest\_route\_centrality\_min}     & {Minimum value of the centrality of the zones crossed~\\by the quickest route between origin and destination.}     & OSMNX and OSM.                          \\
+\textit{graph\_degree}                        & Separation degree between origin and destination zones.                                                            & INESCAT                \\
+\textit{(o/d)\_pop\_dens\_inh\_per\_km2}      & {Population density in the origin/destination zone~\\(in inhabitants per km\textsuperscript{2}).}                  & INE \\
+\textit{(o/d)\_area\_const\_sum\_V}        & {Total built-up surface used for housing in the\\origin/destination zone (in m\textsuperscript{2}).}               & Spanish National Cadaster.              \\
+\textit{(o/d)\_area\_const\_sum\_C}        & {Total built-up surface used for retail and commerce in the \\origin/destination zone (in m\textsuperscript{2}).}  & Spanish National Cadaster.              \\
+\textit{(o/d)\_area\_const\_sum\_O}        & {Total built-up surface used for offices in the \\origin/destination zone (in m\textsuperscript{2}).}              & Spanish National Cadaster.             \\
+\textit{(o/d)\_area\_const\_sum\_E}        & {Total built-up surface used for educational purposes in the \\origin/destination zone (in m\textsuperscript{2}).} & Spanish National Cadaster.              \\
+\textit{(o/d)\_area\_const\_sum\_A}        & {Total built-up surface used for parking or storage in the \\origin/destination zone (in m\textsuperscript{2}).}   & Spanish National Cadaster.              \\
+\textit{(o/d)\_ratio\_workers}                & {Proportion of workers in the origin/destination zone~\\(workers per inhabitants).}                                & INESCAT                \\
+\textit{(o/d)\_len\_non\_motorways\_per\_km2} & {Density of non-motorway roads in the origin/destinationzone~\\(in m/km2)}                                         & OSMNX and OSM.                          \\
+\textit{(o/d)\_ratio\_GHSL\_built\_6to15m}    & {Proportion of the origin/destination zone area covered by~\\buildings between 6 and 15 meters tall.}              & GHSL                                    
+\end{tblr}
+}
+\end{table*}

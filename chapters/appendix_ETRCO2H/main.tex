@@ -1,0 +1,27 @@
+\chapter{Appendix. Large-scale urban traffic microsimulations}
+\chaptermark{Appendix. Large-scale urban traffic microsimulations}
+\label{ch:appendix_getting_real}
+
+\graphicspath{{chapters/appendix_ETRCO2H/figures}}
+
+\section{Statistical information}
+\label{sec:appendix}
+
+
+\begin{figure*}[ht!]
+    \centering
+    \includegraphics[width=1\textwidth]{fig_MWU_results_models_Bonf_n1000_r.png}
+    \caption{Pairwise comparison between the goodness-of-fit metrics for all considered models. We show $p$-values  resulting from a Mann-Whitney-U non-parametric test \citep{Mann1947}, after applying the Bonferroni method for $p$-value correction for multiple comparisons. In most cases, the different models and spatial interaction specifications exhibit statistically significant differences ($p<0.05$). Only CPL shows consistent acceptance of the null hypothesis ($p>0.05$) (i.e. the results of the models are statistically equivalent) for the different specifications of the one-part OLS and XGBoost Tweedie models.}
+    \label{fig:MWU_test_2x2_pvalues}
+\end{figure*}
+
+\begin{figure*}[ht!]
+    \centering
+    \includegraphics[width=1\textwidth]{fig_MWU_results_Bonf_effect_size_CLES_n1000_r.png}
+    \caption{Common Language Effect Size (CLES) \citep{Vargha2000AWong} from the pairwise comparison between the goodness-of-fit metrics for all considered models resulting from a Mann-Whitney-U non-parametric test \citep{Mann1947}.}
+    \label{fig:MWU_test_2x2_effectSize}
+\end{figure*}
+
+% \input{chapters/appendix_ETRCO2H/tables/tab_append_ols_results}
+% \input{chapters/appendix_ETRCO2H/tables/tab_append_xgbtweedie_results}
+% \input{chapters/appendix_ETRCO2H/tables/tab_append_hurdle_results}

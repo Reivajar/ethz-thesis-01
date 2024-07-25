@@ -1,0 +1,31 @@
+% \usepackage{color}
+% \usepackage{tabularray}
+\definecolor{Silver}{rgb}{0.752,0.752,0.752}
+\begin{table*}[ht!]
+\centering
+% \captionsetup{labelformat=empty}
+\caption{Spatial Econometric Models Specifications generalized for origin-destination flows, adapted from \citep{HalleckVega2015TheModel, Elhorst2014SpatialEconometrics, Margaretic2017SpatialFlows}, with $U = \lambda_i W_i u + \epsilon$ and $i=o,d,w$, where $y$ (dependent variable) is a $N\times1$ vector of flows by stacking the columns of the $n \times m $ OD matrix, $W_iy$ denotes the endogenous interactions effects among the dependent variable $y$, $W_i X_i$ the exogeneous interactions effects among the explanatory variables $X_i$, and $W_i u$ the  interactions effects among the error term. $o,d,w$ refers respectively to the origin, destination, and origin-to-destination spatial dependence. $W_i$ is a nonnegative row-standardized contiguity $n \times m$ matrix describing the spatial structure of the zones, $\alpha \iota_N$ is a $N\times1$  constant parameter vector, $\rho_i$ is the spatial autoregressive coefficient, $\lambda_i$ is the spatial autocorrelation coefficient, and $\beta_i$ and $\theta_i$ are fixed parameter to be estimated  \citep{Elhorst2014SpatialEconometrics, LeSage2008SpatialFlows,Porojan2001TradeRevisited}. The General Nesting Spatial model (GNS) included all possible spatial interactions effects. Spatial filtering by restricting parameters $\rho$, $\theta$ and $\lambda$ generate specific spatial model structures \citep{Jiao2021ForecastingModel, Anselin1988SpatialModels}}
+\label{tab:spatial_autoregressive_models} 
+\resizebox{\linewidth}{!}{%
+\begin{tblr}{
+  colsep = 1pt,
+  row{even} = {Silver,c},
+  row{3} = {c},
+  row{5} = {c},
+  cell{1}{1} = {c},
+  cell{1}{2} = {c},
+  cell{7}{1} = {c},
+  cell{7}{2} = {c},
+  vline{2-3} = {2,4,6}{white},
+  hline{2,4,6} = {-}{},
+}
+                                                                                                            & {\textbf{GNS~ }General Nesting Spatial Model\\$y = \alpha \iota_N + \rho_i W_i y + X_i \beta_i + W_i X_i \theta + U$} &                                                                                                      \\
+no lags of X ($\theta=0$)                                                                                     & no lags in errors $(\lambda=0)$                                                                                       & no lags in y $(\rho=0)$                                                                              \\
+{\textbf{SAC} Spatial Autoregressive Combined Model\\$y = \alpha \iota_N + \rho_i W_i y + X_i \beta_i + U$} & {\textbf{SDM} Spatial Durbin Model\\$y = \alpha \iota_N + \rho_i W_i y + X_i \beta_i + W_i X_i \theta + \epsilon$}    & {\textbf{SDEM~ }Spatial Durbin Error Model\\$y = \alpha \iota_N + X_i \beta_i + W_i X_i \theta + U$} \\
+no lags in errors $(\lambda=0)$                                                                             & no lags in y $(\rho=0)$                                                                                               & no lags of X$(\theta=0)$                                                                             \\
+{\textbf{SAR }Spatial Autoregressive Model\\$y = \alpha \iota_N + \rho_i W_i y + X_i \beta_i + \epsilon$}   & {\textbf{SLX }Spatial lags of X Model\\$y = \alpha \iota_N + X_i \beta_i + W_i X_i \theta + \epsilon$}                 & {\textbf{SEM }Spatial Error Model\\$y = \alpha \iota_N + X_i \beta_i + U$}                           \\
+no lags in y $(\rho=0)$                                                                                     & no lags of X $(\theta=0)$                                                                                             & no lags in errors $(\lambda=0)$                                                                      \\
+                                                                                                            & {Non-spatial Model\\$y = \alpha \iota_N + X_i \beta_i + \epsilon$}                            &                                                                                                      
+\end{tblr}
+}
+\end{table*}

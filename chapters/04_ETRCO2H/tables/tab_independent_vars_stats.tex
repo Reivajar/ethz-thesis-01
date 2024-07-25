@@ -1,0 +1,33 @@
+% \usepackage{tabularray}
+\begin{table}
+\centering
+\caption{Description of independent variables. $(o/d)$ refers to these variables referenced both to origin and destination zones. Otherwise, they are origin-destination relation metrics.}
+\label{tab:variable_stats}
+\resizebox{\linewidth}{!}{%
+\begin{tblr}{
+  colsep = 0 pt,
+  column{even} = {r},
+  column{3} = {r},
+  column{5} = {r},
+  hline{1,17} = {-}{0.08em},
+  hline{2} = {-}{},
+}
+\textbf{\textit{Independent variable}}        & \textbf{mean} & \textbf{median} & \textbf{std} & \textbf{min} & \textbf{max} \\
+\textit{daily\_flow}                          & 22.56         & 0.00            & 258.18       & 0.00         & 55560.48     \\
+\textit{quickest\_traveltime}                 & 1331.36       & 1211.00         & 789.49       & 0.00         & 5478.00      \\
+\textit{quickest\_route\_centrality\_mean}    & 23740.34      & 23618.00        & 9080.83      & 1153.00      & 90793.00     \\
+\textit{quickest\_route\_centrality\_max}     & 57538.01      & 50772.00        & 24831.10     & 1153.00      & 90793.00     \\
+\textit{quickest\_route\_centrality\_min}     & 3545.38       & 2498.00         & 3286.93      & 324.00       & 90793.00     \\
+\textit{(o/d)\_pop\_dens\_inh\_per\_km2}      & 19361.76      & 14270.39        & 19388.50     & 13.03        & 98680.04     \\
+\textit{(o/d)\_area\_const\_sum\_V}           & 464649.75     & 364106.00       & 370856.82    & 17462.00     & 3153453.00   \\
+\textit{(o/d)\_area\_const\_sum\_C}           & 48990.99      & 36094.00        & 50945.35     & 0.00         & 383410.00    \\
+\textit{(o/d)\_area\_const\_sum\_O}           & 32616.09      & 7723.00         & 97394.08     & 0.00         & 1385181.00   \\
+\textit{(o/d)\_area\_const\_sum\_E}           & 19558.18      & 12146.00        & 28505.31     & 0.00         & 374419.00    \\
+\textit{(o/d)\_area\_const\_sum\_A}           & 66730.56      & 49264.00        & 67618.85     & 0.00         & 825249.00    \\
+\textit{(o/d)\_ratio\_workers}                & 0.60          & 0.26            & 2.40         & 0.03         & 53.85        \\
+\textit{(o/d)\_len\_non\_motorways\_per\_km2} & 5296.66       & 3328.95         & 5900.24      & 0.00         & 42760.62     \\
+\textit{(o/d)\_ratio\_GHSL\_built\_6to15m}    & 0.08          & 0.05            & 0.09         & 0.00         & 0.42         \\
+\textit{graph\_degree}                        & 8.82          & 9.00            & 3.80         & 0.00         & 23.00        
+\end{tblr}
+}
+\end{table}

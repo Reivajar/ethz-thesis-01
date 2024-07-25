@@ -2,7 +2,8 @@
 \documentclass[%
     twoside, openright, titlepage, numbers=noenddot,%
     cleardoublepage=empty,%
-    abstractoff,%
+    % abstractoff,%
+    abstract=false,%
     BCOR=5.5mm, paper=a5, fontsize=10pt,% A5 soft cover
     %BCOR=5.5mm, paper=17cm:24cm, fontsize=10pt,% 17 cm x 24 cm
     %BCOR=5mm, paper=15.59cm:23.39cm, fontsize=10pt,% Royal soft cover
@@ -18,8 +19,32 @@
 \addbibresource[label=ownpubs]{ownpubs.bib}
 \addbibresource{bibliography.bib}
 \addbibresource{misc.bib}
+\addbibresource{refsVR.bib} % for VR chapter
+\addbibresource{refsGettingReal.bib} % for Getting Real chapter
+\addbibresource{refsLCBM.bib} % for Less Can Be More chapter
+\addbibresource{refsETRCO2H.bib} % for Estimating traffic reduction
+\addbibresource{refs_others.bib} % extra
+
+% Ensure the document starts with the correct language
+\selectlanguage{english}
+
+% Redefine the autoref name for equations if necessary
+\addto\extrasenglish{%
+  \renewcommand{\equationautorefname}{equation}%
+}
 
 \begin{document}
+
+% % Define fancy headers
+% \pagestyle{fancy}
+% \fancyhf{} % Clear all header and footer fields
+% \fancyhead[LE]{\leftmark} % Chapter title on left even pages
+% \fancyhead[RO]{\rightmark} % Section title on right odd pages
+% \renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}} % Set chapter title
+% \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}} % Set section title
+
+
+
 \frenchspacing
 \raggedbottom%
 \selectlanguage{english}
@@ -31,7 +56,8 @@
 %
 % Uncomment and adapt these lines if you want to include a cover PDF.
 %
-\includepdf[pages={1,{}}]{cover/crop/cover_front.pdf}
+% \includepdf[pages={1,{}}]{cover/crop/cover_front.pdf}
+\includepdf[pages={1,{}}]{cover/crop/cover_012.pdf}
 \cleardoublepage\setcounter{page}{1}
 
 %
@@ -51,24 +77,58 @@
 % Mainmatter
 %
 \cleardoublepage\pagenumbering{arabic}%
-\def\dir{chapters/introduction}
+\def\dir{chapters/00_introduction}
 \include{\dir/main}
 
+% \cleardoublepage%
+% \def\dir{chapters/sample-chapter}
+% \include{\dir/main}
+
+% Paper: VR
 \cleardoublepage%
-\def\dir{chapters/sample-chapter}
+\def\dir{chapters/01_VR}
 \include{\dir/main}
 
-% Include some blind text
-\Blinddocument
-
+% Paper: Getting Real
 \cleardoublepage%
-\def\dir{chapters/conclusion_outlook}
+\def\dir{chapters/02_getting_real}
+\include{\dir/main}
+
+%Paper: Less can be more
+\cleardoublepage%
+\def\dir{chapters/03_less_can_be_more}
+\include{\dir/main}
+
+%Paper: Estimating traffic reduction
+\cleardoublepage%
+\def\dir{chapters/04_ETRCO2H}
+\include{\dir/main}
+
+% % Include some blind text
+% \Blinddocument
+
+% Conclusion and Outlook
+\cleardoublepage%
+\def\dir{chapters/05_conclusion_outlook}
 \include{\dir/main}
 
 \appendix
+% \cleardoublepage%
+% \def\dir{chapters/appendix}
+% \include{\dir/main}
+
+% \cleardoublepage%
+% \def\dir{chapters/appendix_getting_real}
+% \include{\dir/main}
+
 \cleardoublepage%
-\def\dir{chapters/appendix}
+\def\dir{chapters/appendix_LCBM}
 \include{\dir/main}
+
+\cleardoublepage%
+\def\dir{chapters/appendix_ETRCO2H}
+\include{\dir/main}
+
 
 \cleardoublepage\include{frontbackmatter/bibliography}
 

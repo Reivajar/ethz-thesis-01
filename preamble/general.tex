@@ -42,6 +42,7 @@
 \usepackage{textcomp}
 \usepackage{mparhack}
 \usepackage{relsize}
+\usepackage{placeins} % added
 
 % Biblatex
 \input{preamble/biblatex}
@@ -65,9 +66,36 @@
 \newcommand{\myfloatalign}{\centering}
 \usepackage{floatrow}
 \usepackage{caption}
-\captionsetup{format=hang,font=small,labelfont={sc},margin=5pt}
+\captionsetup{format=hang,font=tiny,labelfont={sc},margin=5pt} %scriptsize instead of small
 \usepackage{subcaption}
-\captionsetup[sub]{margin=0pt,font=small,labelfont={rm}}
+\captionsetup[sub]{margin=0pt,font=tiny,labelfont={rm}} %scriptsize instead of small
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularray}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{ragged2e}
+
+\usepackage{rotating}
+
+% new command for rotating cells in tables
+\newcommand{\rotcell}[1]{%
+  \rotatebox[origin=c]{90}{%
+    \begin{minipage}{2.75cm} % Adjust the width as needed
+      \centering #1
+    \end{minipage}%
+  }%
+}
+
+% to continue captions
+\usepackage{threeparttable}  % For three-part tables
+\usepackage{capt-of}     % For captions outside of floats
+% \usepackage{parskip}     % For paragraph spacing
+
+% for rotating entire tables
+\usepackage{lscape}
+\usepackage{vcell}
 
 % Blind text
 \usepackage{blindtext}
@@ -186,13 +214,14 @@
 % Chapter font
 \let\chapterNumber\undefined%
 \newfont{\chapterNumber}{eurb10 scaled 5500}
-%\newfont{\chapterNumber}{MinionPro-Regular-lf-t1 scaled 5500}
+% \newfont{\chapterNumber}{MinionPro-Regular-lf-t1 scaled 5500}
+
 
 % SI units
 \usepackage{siunitx}
 \sisetup{
   separate-uncertainty,
-  repeatunits=false,
+  % repeatunits=false,
   detect-family,
   unit-mode=text,
 }
@@ -244,6 +273,10 @@
   \addtocounter{footnote}{-1}%
   \endgroup
 }
+
+% footnotes with symbols
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % Put pages on A4 w/ crop marks
 %\usepackage[a4,center,cam]{crop}
